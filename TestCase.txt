@@ -1,4 +1,4 @@
-$input case 1:
+$input case 1$
 ###
 a <- 1
 b <- c(1, 2, 3, 4)
@@ -9,7 +9,7 @@ print(mat1)
 ###
 
 
-$output case 1:
+$output case 1$
 ###
 1
 1 2 3 4
@@ -19,19 +19,19 @@ $output case 1:
 ###
 
 
-$input case 2:
+$input case 2$
 ###
 b <- c(1, 2, 3, 4)
 print(b[2])
 ###
 
-$output case 2:
+$output case 2$
 ###
 2
 ###
 
 
-$input case 3:
+$input case 3$
 ###
 mat1 <- matrix(c(1, 2, 3, 4), nrow = 2, ncol = 2)
 print(mat1[1,2])
@@ -39,8 +39,24 @@ print(mat1[2,1])
 ###
 
 
-$output case 3:
+$output case 3$
 ###
 3
 2
+###
+
+
+$input case 4$
+###
+str <- c("tomato", "banana", "javascript")
+
+print(str[1])
+print(str[2])
+###
+
+
+$output case 3$
+###
+"tomato"
+"banana"
 ###
