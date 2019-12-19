@@ -60,3 +60,112 @@ $output case 4$
 "tomato"
 "banana"
 ###
+
+$input case 5$
+###
+a <- 1
+b <- 3
+a == b
+a <- b 
+print(a)
+###
+
+$output case 5$
+###
+FALSE
+3
+###
+
+
+$input case 6$
+###
+a <- 1
+b <- 3
+a == b
+a <- b 
+print(a)
+###
+
+$output case 6$
+###
+FALSE
+3
+###
+
+$input case 7$
+###
+a <- 1
+if(FALSE) {
+    print("Not Return")
+}
+if(a == 1) {
+    print("TRUE: a == 1")
+} else {
+    print("FALSE: a == 1")
+}
+###
+
+$output case 7$
+###
+"TRUE: a == 1"
+###
+
+$input case 8$
+###
+a <- 1
+while(a < 5) {
+     a <- a + 1  
+     print(a)
+}
+###
+
+$output case 8$
+###
+2
+3
+4
+5
+###
+
+$input case 9 *$
+###
+# Create data for the graph.
+x <- c(21, 62, 10, 53)
+labels <- c("London", "New York", "Singapore", "Mumbai")
+
+# Give the chart file a name.
+png(file = "city.jpg")
+
+# Plot the chart.
+pie(x,labels)
+
+# Save the file.
+dev.off()
+###
+
+$output case 9 *$
+###
+# a pie picture
+###
+
+$input case 10 *$
+###
+# Create the data for the chart.
+H <- c(7,12,28,3,41)
+M <- c("Mar","Apr","May","Jun","Jul")
+
+# Give the chart file a name.
+png(file = "barchart_months_revenue.png")
+
+# Plot the bar chart.
+barplot(H,names.arg = M,xlab = "Month",ylab = "Revenue",col = "blue",
+main = "Revenue chart")
+
+# Save the file.
+dev.off()
+###
+
+$output case 10 *$
+###
+# a barplot picture
+###
