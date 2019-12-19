@@ -55,7 +55,7 @@ print(str[2])
 ###
 
 
-$output case 3$
+$output case 4$
 ###
 "tomato"
 "banana"
