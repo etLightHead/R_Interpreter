@@ -34,9 +34,7 @@ protected:
 public:
 	CEdit InputMsg;
 	afx_msg void OnBnClickedOk();
-	afx_msg void OnEnChangeEdit2();
 	afx_msg void OnEnChangeEditInput();
-	afx_msg void OnEnChangeEdit1();
 	afx_msg void OnEnChangeEditOuptput();
 	afx_msg void OnBnClickedCancel();
 	afx_msg void OnBnClickedClean();

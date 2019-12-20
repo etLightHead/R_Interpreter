@@ -9,10 +9,12 @@
 #include "afxdialogex.h"
 #include <string>
 #include "InterpreterTransfer.h"
+#include "DrawDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+#include "DrawDlgCreator.h"
 
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框

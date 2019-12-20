@@ -36,6 +36,12 @@
     <ClInclude Include="InterpreterTransfer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DrawDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawDlgCreator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="R_Interpreter.cpp">
@@ -48,6 +54,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="InterpreterTransfer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawDlgCreator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

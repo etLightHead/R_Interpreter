@@ -183,6 +183,8 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DrawDialog.h" />
+    <ClInclude Include="DrawDlgCreator.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="InterpreterTransfer.h" />
     <ClInclude Include="pch.h" />
@@ -192,6 +194,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DrawDialog.cpp" />
+    <ClCompile Include="DrawDlgCreator.cpp" />
     <ClCompile Include="InterpreterTransfer.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
