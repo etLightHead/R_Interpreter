@@ -18,14 +18,16 @@ public:
 	DrawDialog(CWnd* pParent = nullptr);   // 标准构造函数
 	DialogType dialogType;
 	virtual ~DrawDialog();
-	vector<string> xlab;
+	vector<string> label;
 	string xlabel, ylabel;
 	LPCTSTR title;
 	vector<int> data;
 
 	int dlgWidth, dlgHeight;
 	const int STANDARDWIDTH = 800;
-
+	const float PI = 3.14f;
+private:
+	vector<COLORREF> m_color;
 // 对话框数据
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_DIALOG_DRAW };
@@ -50,6 +52,8 @@ public:
 	void DrawBarplotView(CPaintDC& content);
 
 	int GetMaxData();
+
+	int GetSumData();
 
 	void PaintDemo(CPaintDC& content)
 	{

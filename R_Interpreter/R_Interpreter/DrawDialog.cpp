@@ -38,12 +38,17 @@ void DrawDialog::OnPaint()
 {
 	CPaintDC content(this); // device context for painting
 	//PaintDemo(content);
-	//switch ()
-	//{
-	//default:
-	//	break;
-	//}
-	DrawBarplotView(content);
+	switch (dialogType)
+	{
+	case BarplotView:
+		DrawBarplotView(content);
+		break;
+	case PieView:
+		DrawPieView(content);
+		break;
+	default:
+		break;
+	}
 
 
 
@@ -57,7 +62,67 @@ BOOL DrawDialog::OnInitDialog()
 
 void DrawDialog::DrawPieView(CPaintDC& content)
 {
+	/// init all params
+	dlgWidth = STANDARDWIDTH;
+	dlgHeight = 0.6f * dlgWidth;
+	int count = data.size();
+	int pieHeight = dlgHeight * 3.0 / 5.0;
+	int pieWidth = pieHeight;
+	int allData = GetSumData();
+	int radius = pieHeight / 2.0;
 
+	/// init font
+	CFont font;
+	LOGFONT log;
+	log.lfHeight = 0;
+	log.lfEscapement = 0;
+	log.lfItalic = 0;
+	log.lfUnderline = 0;
+	log.lfStrikeOut = 0;
+	font.CreateFontIndirect(&log);
+
+	/// init color
+	if (m_color.size() != data.size())
+	{
+		m_color.clear();
+		for (int i = 0; i < data.size(); i++)
+		{
+			m_color.push_back(RGB(randomRange(10, 230), randomRange(10, 255), randomRange(30, 170)));
+		}
+	}
+
+
+	UpdateDlgSize();
+
+	/// draw pie
+	int preEndx = int(radius * cos(0)), preEndy = int(radius * sin(0));
+	int Midpos = dlgHeight / 2.0;
+	int sum = 0;
+	for (int i = 0; i < data.size(); i++)
+	{
+		CBrush pieBrush(m_color[i]);
+		sum += data[i];
+		content.SelectObject(&pieBrush);
+		int endx = int(radius * cos(sum * 1.0 / allData * PI * 2)), endy = int(radius * sin(sum * 1.0 / allData * PI * 2));
+		content.Pie(Midpos - radius, Midpos - radius, Midpos + radius, Midpos + radius, Midpos + endx, Midpos + endy, Midpos + preEndx, Midpos + preEndy);
+		preEndx = endx, preEndy = endy;
+	}
+
+	/// draw labels
+	int rectWidth = pieHeight * 1.0f/ count;
+	int interval = rectWidth * 0.6;
+	rectWidth -= interval;
+	int startx = dlgHeight, starty = dlgHeight * 4.0 / 5.0 - rectWidth;
+	for (int i = 0; i < data.size(); i++)
+	{
+		CBrush recBrush(m_color[i]);
+		CRect recClone(startx, starty - i * (rectWidth + interval), startx + rectWidth, starty - rectWidth - i * (rectWidth + interval));
+		content.FillRect(recClone, &recBrush);
+		CString labelName(label[i].c_str());
+		content.TextOutW(startx + rectWidth + rectWidth, starty - rectWidth - i * (rectWidth + interval) + 4, labelName);
+		CString amount((to_string(data[i]).c_str()));
+		content.TextOutW(0.8f * dlgWidth, starty - rectWidth - i * (rectWidth + interval) + 4, amount);
+	}
 }
 
 void DrawDialog::UpdateDlgSize()
@@ -158,6 +223,15 @@ int DrawDialog::GetMaxData()
 	return mx;
 }
 
+int DrawDialog::GetSumData()
+{
+	int result = 0;
+	for (int i = 0; i < data.size(); i++)
+	{
+		result += data[i];
+	}
+	return result;
+}
 
 void DrawDialog::OnEraseBkGnd()
 {
