@@ -133,15 +133,10 @@ $input case 9 *$
 x <- c(21, 62, 10, 53)
 labels <- c("London", "New York", "Singapore", "Mumbai")
 
-# Give the chart file a name.
-png(file = "city.jpg")
 
 # Plot the chart.
-pie(x,labels)
+pie(x,labels,name="xxx")
 
-# Save the file.
-dev.off()
-###
 
 $output case 9 *$
 ###
@@ -152,13 +147,9 @@ $input case 10 *$
 ###
 # Create the data for the chart.
 H <- c(7,12,28,3,41)
-M <- c("Mar","Apr","May","Jun","Jul")
-
-# Give the chart file a name.
-png(file = "barchart_months_revenue.png")
 
 # Plot the bar chart.
-barplot(H,names.arg = M,xlab = "Month",ylab = "Revenue",col = "blue",
+barplot(H,xlab = "Month",ylab = "Revenue",
 main = "Revenue chart")
 
 # Save the file.
