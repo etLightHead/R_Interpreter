@@ -12,7 +12,8 @@
 #define IDC_EDIT_INPUT                  1001
 #define IDCLEAN                         1003
 #define IDTRANSFER                      1004
-#define IDC_EDIT1                       1007
+#define IDTRANSFER2                     1005
+#define IDTRANSFER3                     1006
 
 // Next default values for new objects
 // 

@@ -75,6 +75,8 @@ BEGIN_MESSAGE_MAP(CRInterpreterDlg, CDialogEx)
 	ON_BN_CLICKED(IDCANCEL, &CRInterpreterDlg::OnBnClickedCancel)
 	ON_BN_CLICKED(IDCLEAN, &CRInterpreterDlg::OnBnClickedClean)
 	ON_BN_CLICKED(IDTRANSFER, &CRInterpreterDlg::OnBnClickedTransfer)
+	ON_BN_CLICKED(IDTRANSFER2, &CRInterpreterDlg::OnBnClickedTransfer2)
+	ON_BN_CLICKED(IDTRANSFER3, &CRInterpreterDlg::OnBnClickedTransfer3)
 END_MESSAGE_MAP()
 
 
@@ -210,4 +212,18 @@ void CRInterpreterDlg::OnBnClickedTransfer()
 	GetDlgItemTextW(IDC_EDIT_INPUT, text);
 	CString transferedItem = InterpreterTransfer::getInstance()->transferText(text);
 	SetDlgItemTextW(IDC_EDIT_OUPTPUT, transferedItem);
+}
+
+
+void CRInterpreterDlg::OnBnClickedTransfer2()
+{
+	DrawDlgCreator* creator = new DrawDlgCreator();
+	creator->DrawDemoBarlotView();
+}
+
+
+void CRInterpreterDlg::OnBnClickedTransfer3()
+{
+	DrawDlgCreator* creator = new DrawDlgCreator();
+	creator->DrawDemoPieView();
 }

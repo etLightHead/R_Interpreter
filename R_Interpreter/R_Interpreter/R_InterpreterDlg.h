@@ -42,4 +42,7 @@ public:
 
 private:
 
+public:
+	afx_msg void OnBnClickedTransfer2();
+	afx_msg void OnBnClickedTransfer3();
 };

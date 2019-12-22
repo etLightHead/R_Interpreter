@@ -8,7 +8,6 @@ print(b)
 print(mat1)
 ###
 
-
 $output case 1$
 ###
 1
@@ -38,7 +37,6 @@ print(mat1[1,2])
 print(mat1[2,1])
 ###
 
-
 $output case 3$
 ###
 3
@@ -60,6 +58,7 @@ $output case 4$
 "tomato"
 "banana"
 ###
+
 
 $input case 5$
 ###
@@ -92,15 +91,16 @@ FALSE
 3
 ###
 
+
 $input case 7$
 ###
 a <- 1
-if(FALSE) {
-    print("Not Return")
-}
-if(a == 1) {
+if(a == 1) 
+{
     print("TRUE: a == 1")
-} else {
+} 
+else 
+{
     print("FALSE: a == 1")
 }
 ###
@@ -110,12 +110,13 @@ $output case 7$
 "TRUE: a == 1"
 ###
 
+
 $input case 8$
 ###
 a <- 1
 while(a < 5) {
-     a <- a + 1  
-     print(a)
+    a <- a + 1  
+    print(a)
 }
 ###
 
@@ -127,33 +128,30 @@ $output case 8$
 5
 ###
 
+
 $input case 9 *$
 ###
 # Create data for the graph.
 x <- c(21, 62, 10, 53)
 labels <- c("London", "New York", "Singapore", "Mumbai")
 
-
 # Plot the chart.
-pie(x,labels,name="xxx")
-
+pie(x, labels, name="xxx")
+###
 
 $output case 9 *$
 ###
 # a pie picture
 ###
 
+
 $input case 10 *$
 ###
 # Create the data for the chart.
-H <- c(7,12,28,3,41)
+H<-c(7,12,28,3,41)
 
 # Plot the bar chart.
-barplot(H,xlab = "Month",ylab = "Revenue",
-main = "Revenue chart")
-
-# Save the file.
-dev.off()
+barplot(H,xlab = "Month", ylab = "Revenue", main = "Revenue chart")
 ###
 
 $output case 10 *$
